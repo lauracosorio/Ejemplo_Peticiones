@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'
 import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 
 class Edit extends React.Component {
@@ -19,13 +20,30 @@ class Edit extends React.Component {
   // this.props.show()
   // }
 
-  // _handleClose = () => {
-  //   this.about.setState({ show: false })
-  // }
+  _handleClose = () => {
+    this.about.setState({ show: false })
+  }
 
+  _handleSubmit = (e) => {
+    //Para que no se recargue la página cuando le de click en guardar
+    e.preventDefault();
+    axios.put("https://api-fake.lauracosorio.vercel.app/persondata", this.about.state.user)
+      .then((user) => {
+        console.log("Se guardó el usuario con éxito");
+        this.props.history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   
-  
-
+  _handleChange = (e) => {
+    this.about.setState({
+      user: {
+        [e.target.name]: e.target.value
+      }
+    });
+  };
 
   render() {
     console.log(this.about);
@@ -58,9 +76,9 @@ class Edit extends React.Component {
             <Col sm="10" md="10">
               <Form.Control
                 type="text"
-                // onChange={this._handleChange}
-                // name="last_name"
-                // value={this.about.state.user.last_name}
+                onChange={this._handleChange}
+                name="last_name"
+                value={this.about.state.user.last_name}
               />
             </Col>
           </Form.Group>
@@ -72,9 +90,9 @@ class Edit extends React.Component {
             <Col sm="10" md="10">
               <Form.Control
                 type="email"
-                // onChange={this._handleChange}
-                // name="email"
-                // value={this.about.state.user.email}
+                onChange={this._handleChange}
+                name="email"
+                value={this.about.state.user.email}
               />
             </Col>
           </Form.Group>
@@ -85,9 +103,9 @@ class Edit extends React.Component {
             <Col sm="10" md="10">
               <Form.Control
                 type="text"
-                // onChange={this._handleChange}
-                // name="gender"
-                // value={this.about.state.user.gender}
+                onChange={this._handleChange}
+                name="gender"
+                value={this.about.state.user.gender}
               />
             </Col>
           </Form.Group>
