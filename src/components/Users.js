@@ -31,7 +31,7 @@ export class Users extends React.Component {
     //Para que no se recargue la página cuando le de click en guardar
     e.preventDefault();
     axios
-      .post("https://api-fake.lauracosorio.vercel.app/persondata", this.state.form)
+      .post("https://api-fake-dynafzrw0.vercel.app/personData", this.state.form)
       .then((user) => {
         console.log("Se guardó el usuario con éxito");
         this.props.history.push("/");
@@ -104,7 +104,7 @@ export class Users extends React.Component {
             Guardar
           </Button>
         </Form>
-        <Edit form={this.state.form} />
+        <Edit form={this.state.form.first_name} />
       </Container>
     );
   }

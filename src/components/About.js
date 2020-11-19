@@ -23,7 +23,7 @@ export class About extends React.Component {
 
     axios
       .get(
-        `https://api-fake.lauracosorio.vercel.app/persondata/${this.props.match.params.id}`,
+        `https://api-fake-dynafzrw0.vercel.app/personData/${this.props.match.params.id}`,
         { cancelToken: this.axiosCancelSource.token }
       )
       .then((res) => {
@@ -44,7 +44,7 @@ export class About extends React.Component {
     this.axiosCancelSource = axios.CancelToken.source();
     axios
       .delete(
-        `https://api-fake.lauracosorio.vercel.app/personData/${this.props.match.params.id}`,
+        `https://api-fake-dynafzrw0.vercel.app/personData/${this.props.match.params.id}`,
         { cancelToken: this.axiosCancelSource.token }
       )
       .then((res) => {
@@ -78,7 +78,7 @@ export class About extends React.Component {
         style={{ width: "18rem" }}
         className=" card m-5"
       >
-        <div class="card-body">
+        <div className="card-body">
           <h5 className="card-title">{this.state.user.first_name}</h5>
           <h5 className="card-title">{this.state.user.last_name}</h5>
           <p className="card-text">{this.state.user.email}</p>
