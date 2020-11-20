@@ -5,7 +5,7 @@ import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 class Edit extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.about = props.about;
   }
 
@@ -27,10 +27,10 @@ class Edit extends React.Component {
     e.preventDefault();
     axios
       .put(
-        `https://api-fake-dynafzrw0.vercel.app/personData/${this.about.state.user.id}`,this.about.state.user
+        `https://users-phi.vercel.app/users/${this.about.state.user.id}`,
+        this.about.state.user
       )
       .then((user) => {
-     
         console.log(`${user} Se guardó el usuario con éxito`);
         // this.props.history.push("/");
       })
@@ -41,6 +41,7 @@ class Edit extends React.Component {
 
   render() {
     // console.log(this.about.state.user);
+
     return (
       <>
         <Container>
@@ -113,7 +114,11 @@ class Edit extends React.Component {
                   <Button variant="secondary" onClick={this._handleClose}>
                     Close
                   </Button>
-                  <Button type="submite" variant="primary" onClick={this._handleClose}>
+                  <Button
+                    type="submite"
+                    variant="primary"
+                    onClick={this._handleClose}
+                  >
                     Save Changes
                   </Button>
                 </Modal.Footer>

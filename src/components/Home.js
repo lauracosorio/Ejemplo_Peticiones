@@ -21,19 +21,18 @@ export class Home extends React.Component {
     this.axiosCancelSource = axios.CancelToken.source();
 
     axios
-      .get("https://api-fake-dynafzrw0.vercel.app/personData", {
+      .get("https://users-phi.vercel.app/users", {
         cancelToken: this.axiosCancelSource.token
       })
       .then((res) => {
         const users = res.data;
-
+        // console.log(res)
         this.setState({
           loading: false,
           users
         });
       });
   }
-
   componentWillUnmount() {
     this.axiosCancelSource.cancel();
   }

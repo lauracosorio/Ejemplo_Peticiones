@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Form, Row, Col, Container, Button } from "react-bootstrap";
-import Edit from "./Edit";
 
 export class Users extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ export class Users extends React.Component {
     //Para que no se recargue la página cuando le de click en guardar
     e.preventDefault();
     axios
-      .post("https://api-fake-dynafzrw0.vercel.app/personData", this.state.form)
+      .post("https://users-phi.vercel.app/users", this.state.form)
       .then((user) => {
         console.log("Se guardó el usuario con éxito");
         this.props.history.push("/");
