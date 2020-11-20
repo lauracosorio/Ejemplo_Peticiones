@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Form, Row, Col, Container, Button } from "react-bootstrap";
-import Edit from "./Edit"
+import Edit from "./Edit";
 
 export class Users extends React.Component {
   constructor(props) {
@@ -42,7 +42,8 @@ export class Users extends React.Component {
   };
 
   render() {
-    console.log(this.state.form)
+    console.log(this.state.form);
+
     return (
       <Container className="mt-5">
         <Form onSubmit={this._handleSubmit} className="justify-content-center">
@@ -104,7 +105,6 @@ export class Users extends React.Component {
             Guardar
           </Button>
         </Form>
-        <Edit form={this.state.form.first_name} />
       </Container>
     );
   }

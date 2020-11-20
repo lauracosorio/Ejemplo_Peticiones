@@ -105,8 +105,8 @@ export class About extends React.Component {
         <div className="row"></div>
       </div>
 
-      
-       <Edit about={this}/>
+
+       <Edit about={this}/> 
        </>
     );
   }

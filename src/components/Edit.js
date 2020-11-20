@@ -5,26 +5,11 @@ import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 class Edit extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //     first_name: props.about,
-    //     last_name: "",
-    //     email: "",
-    //     gender: "",
-    //   loading: true,
-    //   error: null
-    // };
+    
     this.about = props.about;
   }
 
-  // _handleShow(){
-  // this.props.show()
-  // }
-
   _handleClose = () => {
-    this.about.setState({ show: false });
-  };
-
-  _handleSave = () => {
     this.about.setState({ show: false });
   };
 
@@ -55,7 +40,7 @@ class Edit extends React.Component {
   };
 
   render() {
-    console.log(this.about.state.user);
+    // console.log(this.about.state.user);
     return (
       <>
         <Container>

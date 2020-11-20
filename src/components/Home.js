@@ -40,28 +40,34 @@ export class Home extends React.Component {
 
   render() {
     console.log(this.state.users);
-    return (
-      <>
-        <div className="container">
-          <div className="row row-cols-1 row-cols-md-2">
-            {this.state.users.map((user) => {
-              return (
-                <div className="col-md-4 mb-4 mt-4" key={user.id}>
-                  <div className="card">
-                    <div className="card-body">
-                    <h1><Link to={`/users/${user.id}`}>ID ==> {user.id}</Link></h1>
-                      <h5 className="card-title">{user.first_name}</h5>
-                      <p className="card-text">{user.last_name}</p>
-                      <p className="card-text">{user.email}</p>
-                      <p className="card-text">{user.gender}</p>
+    if (this.state.loading === true) {
+      return <h1> Loading.... </h1>;
+    } else {
+      return (
+        <>
+          <div className="container">
+            <div className="row row-cols-1 row-cols-md-2">
+              {this.state.users.map((user) => {
+                return (
+                  <div className="col-md-4 mb-4 mt-4" key={user.id}>
+                    <div className="card">
+                      <div className="card-body">
+                        <h1>
+                          <Link to={`/users/${user.id}`}>ID ==> {user.id}</Link>
+                        </h1>
+                        <h5 className="card-title">{user.first_name}</h5>
+                        <p className="card-text">{user.last_name}</p>
+                        <p className="card-text">{user.email}</p>
+                        <p className="card-text">{user.gender}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </>
-    );
+        </>
+      );
+    }
   }
 }
