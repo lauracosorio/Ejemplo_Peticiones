@@ -80,7 +80,7 @@ export class Users extends React.Component {
             </Form.Label>
             <Col sm="10" md="4">
               <Form.Control
-                type="email"
+                type="password"
                 onChange={this._handleChange}
                 name="email"
                 value={this.state.form.email}

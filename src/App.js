@@ -8,14 +8,14 @@ import "./styles.css";
 
 export default function App() {
   return (
-  <BrowserRouter>
-  <Switch>
-    <Layout>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/users/:id" component={About}/>
-<Route exact path="/users" component={Users} /> 
-    </Layout>
-    </Switch>
-  </BrowserRouter>
+    <BrowserRouter>
+      <Switch>
+        <Layout>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users/:id" component={About} />
+          <Route exact path="/users" component={Users} />
+        </Layout>
+      </Switch>
+    </BrowserRouter>
   );
 }

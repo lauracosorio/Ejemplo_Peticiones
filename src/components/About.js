@@ -43,7 +43,7 @@ export class About extends React.Component {
     this.axiosCancelSource = axios.CancelToken.source();
     axios
       .delete(
-        `https://api-fake-dynafzrw0.vercel.app/personData/${this.props.match.params.id}`,
+        `https://users-phi.vercel.app/users/${this.props.match.params.id}`,
         { cancelToken: this.axiosCancelSource.token }
       )
       .then((res) => {
@@ -88,7 +88,7 @@ export class About extends React.Component {
                 className="btn btn-danger col-md-5  col-sm-3"
                 onClick={this._handleDelete}
                 variant="danger"
-                type="submit"
+                // type="submit"
               >
                 Eliminar
               </button>{" "}
